@@ -1,4 +1,3 @@
-// Install Event
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open('pwa-cache').then(cache => {
@@ -13,7 +12,6 @@ self.addEventListener('install', event => {
   );
 });
 
-// Fetch Event
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request).then(response => {
